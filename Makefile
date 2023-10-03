@@ -158,7 +158,7 @@ start-acceptance-servers: build-acceptance-servers ## Start Acceptance Servers
 	@echo "Start acceptance backend"
 	@docker run --rm -p 55001:55001 --name ploneconf2023-backend-acceptance -d polyester/ploneconf2023-backend:acceptance
 	@echo "Start acceptance frontend"
-	@docker run --rm -p 3000:3000 --name ploneconf2023-frontend-acceptance --link ploneconf2023-backend-acceptance:backend -e RAZZLE_API_PATH=http://127.0.0.1:55001/plone -e RAZZLE_INTERNAL_API_PATH=http://backend:55001/plone -d polyester/ploneconf2023-frontend:acceptance
+	@docker run --rm -p 3000:3000 --name ploneconf2023-frontend-acceptance --link ploneconf2023-backend-acceptance:backend -e RAZZLE_API_PATH=http://localhost:55001/plone -e RAZZLE_INTERNAL_API_PATH=http://backend:55001/plone -d polyester/ploneconf2023-frontend:acceptance
 
 .PHONY: stop-acceptance-servers
 stop-acceptance-servers: ## Stop Acceptance Servers
@@ -169,6 +169,6 @@ stop-acceptance-servers: ## Stop Acceptance Servers
 .PHONY: run-acceptance-tests
 run-acceptance-tests: ## Run Acceptance tests
 	$(MAKE) start-acceptance-servers
-	npx wait-on --httpTimeout 20000 http-get://127.0.0.1:55001/plone http://127.0.0.1:3000
+	npx wait-on --httpTimeout 20000 http-get://localhost:55001/plone http://localhost:3000
 	$(MAKE) -C "./frontend/" test-acceptance-headless
 	$(MAKE) stop-acceptance-servers
