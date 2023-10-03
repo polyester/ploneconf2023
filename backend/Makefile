@@ -155,7 +155,7 @@ create-site: instance/etc/zope.ini ## Create a new site from scratch
 	PYTHONWARNINGS=ignore ./bin/zconsole run instance/etc/zope.conf ./scripts/create_site.py
 
 .PHONY: start
-start: ## Start a Plone instance on localhost:8080
+start: ## Start a Plone instance on 127.0.0.1:8080
 	PYTHONWARNINGS=ignore ./bin/runwsgi instance/etc/zope.ini
 
 .PHONY: debug

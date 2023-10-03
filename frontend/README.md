@@ -13,7 +13,7 @@ Installs and checkouts the `mrs-developer` directives (`make develop`), creates 
 ### `yarn start`
 
 Runs the project in development mode.
-You can view your application at `http://localhost:3000`
+You can view your application at `http://127.0.0.1:3000`
 
 The page will reload if you make edits.
 
@@ -28,7 +28,7 @@ Your app is ready to be deployed!
 
 Runs the compiled app in production.
 
-You can again view your application at `http://localhost:3000`
+You can again view your application at `http://127.0.0.1:3000`
 
 ### `yarn test`
 

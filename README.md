@@ -41,13 +41,13 @@ make install
 make create-site
 ```
 
-2. Start the Backend at [http://localhost:8080/](http://localhost:8080/):
+2. Start the Backend at [http://127.0.0.1:8080/](http://127.0.0.1:8080/):
 
 ```shell
 make start-backend
 ```
 
-3. In a new terminal, start the Frontend at [http://localhost:3000/](http://localhost:3000/):
+3. In a new terminal, start the Frontend at [http://127.0.0.1:3000/](http://127.0.0.1:3000/):
 
 ```shell
 make start-frontend
